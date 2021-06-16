@@ -1,3 +1,7 @@
+import time
+from pathlib import Path
+
+import pyautogui
 import pyautogui as gui
 
 
@@ -6,5 +10,17 @@ def position_test():
     return position
 
 
+def locate_enemy_health_bar():
+    enemy_healthbar = Path("assets/health_bar.png")
+    while True:
+        # TODO : optimize where to look on screen
+        # TODO : maybe add a check on healthbar color ?
+        if pyautogui.locateOnScreen(enemy_healthbar) is None:
+            print("No enemy nearby")
+            time.sleep(0.5)
+        else:
+            print("ENEMY SPOTTED")
+            time.sleep(1)
+
 if __name__ == "__main__":
-    print(gui.size())
+    locate_enemy_health_bar()
