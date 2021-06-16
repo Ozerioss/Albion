@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "albion"
+version = "0.1.0"
+description = "Albion script. Trigger action on sound cue and/or enemy approaching"
+authors = ["ozerioss"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+PyAutoGUI = "^0.9.52"
+black = "^21.6b0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
