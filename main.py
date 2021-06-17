@@ -8,7 +8,7 @@ def locate_enemy_health_bar(enemy_health_bar: Path):
     while True:
         # TODO : optimize where to look on screen
         # TODO : maybe add a check on healthbar color ?
-        if pyautogui.locateOnScreen(str(enemy_health_bar), confidence=0.79, grayscale=True) is None:
+        if pyautogui.locateOnScreen(str(enemy_health_bar), confidence=0.778, grayscale=False) is None:
             print("No enemy nearby")
             time.sleep(0.2)
         else:
@@ -23,4 +23,4 @@ def run_action(action: str):
 
 
 if __name__ == "__main__":
-    locate_enemy_health_bar(Path("assets/health_bar_flagged.png"))
+    locate_enemy_health_bar(Path("assets/health_bar_low_opacity.png"))
