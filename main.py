@@ -11,12 +11,11 @@ def position_test():
 
 
 def locate_enemy_health_bar():
-    enemy_healthbar = Path("assets/health_bar.png")
-    print(enemy_healthbar)
+    enemy_health_bar = Path("assets/health_bar_flagged.png", confidence=0.6)
     while True:
         # TODO : optimize where to look on screen
         # TODO : maybe add a check on healthbar color ?
-        if pyautogui.locateOnScreen(str(enemy_healthbar)) is None:
+        if pyautogui.locateOnScreen(str(enemy_health_bar)) is None:
             print("No enemy nearby")
             time.sleep(0.5)
         else:
