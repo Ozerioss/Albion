@@ -10,7 +10,9 @@ from Action import Action
 def locate_enemy_health_bar(enemy_health_bar: Path, confidence: float = 0.9):
     # TODO : optimize where to look on screen
     # TODO : maybe add a check on healthbar color ?
-    located_enemy = pyautogui.locateOnScreen(str(enemy_health_bar), confidence=confidence, grayscale=False)
+    located_enemy = pyautogui.locateOnScreen(
+        str(enemy_health_bar), confidence=confidence, grayscale=False
+    )
     if located_enemy is None:
         print("No enemy nearby")
         time.sleep(0.3)
