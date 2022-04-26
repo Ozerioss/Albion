@@ -7,15 +7,15 @@ function sellItems()
   create_sell_order()
 end
 
-function sell()
-  moveNclick(43713, 26117)
-end
-
 function initSell()
   sell()
   moveNclick(19124, 31401) -- sell order only once per loop of full inventory
   undercut()
   create_sell_order()
+end
+
+function sell()
+  moveNclick(43713, 26117)
 end
 
 function undercut()
@@ -26,13 +26,14 @@ function create_sell_order()
   moveNclick(30394, 44034)
 end
 
+
 function moveNclick(x, y)
   MoveMouseTo(x, y)
-  Sleep(800)
+  Sleep(500)
   PressMouseButton(1)
   Sleep(50)
   ReleaseMouseButton(1)
-  Sleep(800)
+  Sleep(500)
 end
 
 function OnEvent(event, arg)
