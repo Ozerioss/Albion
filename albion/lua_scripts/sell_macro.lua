@@ -1,3 +1,5 @@
+INVENTORY_SIZE = 48
+
 function sellItems()
   -- For debugging purposes
   --x, y = GetMousePosition();
@@ -40,13 +42,13 @@ function OnEvent(event, arg)
     OutputLogMessage("Event: "..event.." Arg: "..arg.."\n")
     if event == "MOUSE_BUTTON_PRESSED" and arg == 3
     then
-      for item_index = 1, 48, 1
+      for item_index = 1, INVENTORY_SIZE, 1
       do
         if item_index == 1
         then
           initSell()
         end
-        OutputLogMessage("Selling item %d of 48\n", item_index)
+        OutputLogMessage("Selling item %d of %d\n", item_index, INVENTORY_SIZE)
         sellItems()
       end
     end
